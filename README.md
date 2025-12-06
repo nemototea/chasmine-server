@@ -2,40 +2,40 @@
 
 Cha'sMineのWebフロントエンド・バックエンド
 
-## Tech Stack
+## 技術スタック
 
-- **Frontend**: [Remix](https://remix.run/) with TypeScript
-- **Backend**: [NestJS](https://nestjs.com/) with TypeScript
-- **Container**: Docker & Docker Compose
+- **フロントエンド**: [Remix](https://remix.run/) with TypeScript
+- **バックエンド**: [NestJS](https://nestjs.com/) with TypeScript
+- **コンテナ**: Docker & Docker Compose
 
-## Project Structure
+## プロジェクト構成
 
 ```
 chasmine-server/
-├── frontend/          # Remix frontend application
-│   ├── app/          # Remix app directory
-│   │   ├── routes/   # Route components
-│   │   └── root.tsx  # Root component
+├── frontend/          # Remix フロントエンドアプリケーション
+│   ├── app/          # Remix アプリディレクトリ
+│   │   ├── routes/   # ルートコンポーネント
+│   │   └── root.tsx  # ルートコンポーネント
 │   ├── Dockerfile
 │   └── package.json
-├── backend/           # NestJS backend application
-│   ├── src/          # Source code
-│   ├── test/         # Tests
+├── backend/           # NestJS バックエンドアプリケーション
+│   ├── src/          # ソースコード
+│   ├── test/         # テスト
 │   ├── Dockerfile
 │   └── package.json
 └── docker-compose.yml
 ```
 
-## Getting Started
+## はじめに
 
-### Prerequisites
+### 必要な環境
 
 - Node.js >= 20.0.0
 - Docker & Docker Compose
 
-### Development
+### 開発
 
-#### Frontend (Remix)
+#### フロントエンド (Remix)
 
 ```bash
 cd frontend
@@ -43,9 +43,9 @@ npm install
 npm run dev
 ```
 
-The frontend will be available at http://localhost:3000
+フロントエンドは http://localhost:3000 でアクセスできます
 
-#### Backend (NestJS)
+#### バックエンド (NestJS)
 
 ```bash
 cd backend
@@ -53,41 +53,41 @@ npm install
 npm run start:dev
 ```
 
-The backend will be available at http://localhost:3001
+バックエンドは http://localhost:3001 でアクセスできます
 
 ### Docker Compose
 
-To run the entire application using Docker Compose:
+Docker Composeを使用してアプリケーション全体を実行する場合:
 
 ```bash
 docker compose up --build
 ```
 
-- Frontend: http://localhost:3000
-- Backend: http://localhost:3001
+- フロントエンド: http://localhost:3000
+- バックエンド: http://localhost:3001
 
-To stop the application:
+アプリケーションを停止する場合:
 
 ```bash
 docker compose down
 ```
 
-## Scripts
+## スクリプト
 
-### Frontend
+### フロントエンド
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run typecheck` - Run TypeScript type checking
+- `npm run dev` - 開発サーバーを起動
+- `npm run build` - プロダクション用にビルド
+- `npm run start` - プロダクションサーバーを起動
+- `npm run lint` - ESLintを実行
+- `npm run typecheck` - TypeScript型チェックを実行
 
-### Backend
+### バックエンド
 
-- `npm run start:dev` - Start development server with watch mode
-- `npm run build` - Build for production
-- `npm run start:prod` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run test` - Run unit tests
-- `npm run test:e2e` - Run end-to-end tests
+- `npm run start:dev` - ウォッチモードで開発サーバーを起動
+- `npm run build` - プロダクション用にビルド
+- `npm run start:prod` - プロダクションサーバーを起動
+- `npm run lint` - ESLintを実行
+- `npm run test` - ユニットテストを実行
+- `npm run test:e2e` - E2Eテストを実行
 
