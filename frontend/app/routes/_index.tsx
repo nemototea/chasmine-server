@@ -11,7 +11,7 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Cha&apos;sMine</h1>
-      <p>Frontend by Remix, Backend by NestJS</p>
+      <p>Frontend by React Router v7, Backend by NestJS</p>
     </div>
   );
 }
