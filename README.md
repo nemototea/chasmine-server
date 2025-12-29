@@ -4,7 +4,7 @@ Cha'sMineのWebフロントエンド・バックエンド
 
 ## 技術スタック
 
-- **フロントエンド**: [Remix](https://remix.run/) with TypeScript
+- **フロントエンド**: [React Router v7](https://reactrouter.com/) with TypeScript
 - **バックエンド**: [NestJS](https://nestjs.com/) with TypeScript
 - **コンテナ**: Docker & Docker Compose
 
@@ -12,8 +12,8 @@ Cha'sMineのWebフロントエンド・バックエンド
 
 ```
 chasmine-server/
-├── frontend/          # Remix フロントエンドアプリケーション
-│   ├── app/          # Remix アプリディレクトリ
+├── frontend/          # React Router v7 フロントエンドアプリケーション
+│   ├── app/          # React Router アプリディレクトリ
 │   │   ├── routes/   # ルートコンポーネント
 │   │   └── root.tsx  # ルートコンポーネント
 │   ├── Dockerfile     # 本番用
@@ -32,12 +32,12 @@ chasmine-server/
 
 ### 必要な環境
 
-- Node.js >= 20.0.0
+- Node.js >= 24.0.0
 - Docker & Docker Compose
 
 ### 開発
 
-#### フロントエンド (Remix)
+#### フロントエンド (React Router v7)
 
 ```bash
 cd frontend
