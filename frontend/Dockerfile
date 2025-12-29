@@ -15,20 +15,20 @@ COPY . .
 
 RUN npm run build
 
-# Production image, copy all the files and run remix
+# Production image, copy all the files and run React Router
 FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
 
 RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 remix
+RUN adduser --system --uid 1001 reactrouter
 
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 
-USER remix
+USER reactrouter
 
 EXPOSE 3000
 
