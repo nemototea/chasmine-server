@@ -25,12 +25,44 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=3001
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_NAME=chasmine_dev
+      - DB_USER=chasmine_user
+      - DB_PASSWORD=chasmine_password
     volumes:
       - ./backend:/app
       - /app/node_modules
+    depends_on:
+      - db
     networks:
       - app-network
+
+  db:
+    image: mysql:8.4
+    container_name: chasmine-mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=chasmine_dev
+      - MYSQL_USER=chasmine_user
+      - MYSQL_PASSWORD=chasmine_password
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+      interval: 10s
 
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local
