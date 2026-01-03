@@ -30,6 +30,7 @@ services:
       - DB_NAME=chasmine_dev
       - DB_USER=chasmine_user
       - DB_PASSWORD=chasmine_password
+      - DATABASE_URL=mysql://chasmine_user:chasmine_password@db:3306/chasmine_dev
     volumes:
       - ./backend:/app
       - /app/node_modules
