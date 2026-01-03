@@ -23,6 +23,12 @@ lerna-debug.log*
 .env.local
 .env.*.local
 
+# Database
+mysql-data/
+*.sql
+*.db
+*.sqlite
+
 # temp directory
 /tmp
 .temp
